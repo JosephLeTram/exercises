@@ -31,7 +31,8 @@ dttime0 = datetime.strptime(strtime0, "%Y-%m-%dT%H:%M:%S.000Z")
 # timedelta method là một khoảng thời gian giữa 2 thời điểm
 # Sử dụng timedelta method để cộng thêm thời gian, xuất ra giá trị mới dttime1
 
-dttime1 = dttime0 + timedelta(hours=1, minutes=2, seconds=3)
+dttimediff = timedelta(hours=1, minutes=2, seconds=3)
+dttime1 = dttime0 + dttimediff
 
 # Xuất 3 giá trị đã tính ra màn hình
 
