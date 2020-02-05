@@ -28,8 +28,9 @@ fprice1 = fprice * 1.1
 dttime0 = datetime.strptime(strtime0, "%Y-%m-%dT%H:%M:%S.000Z")
 
 # tạo biến dttime1 có giá trị bằng giá trị của dttime0 cộng thêm 1 giờ 2 phút 3 giây
-
+# timedelta method là một khoảng thời gian giữa 2 thời điểm
 # Sử dụng timedelta method để cộng thêm thời gian, xuất ra giá trị mới dttime1
+
 dttime1 = dttime0 + timedelta(hours=1, minutes=2, seconds=3)
 
 # Xuất 3 giá trị đã tính ra màn hình
