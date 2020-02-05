@@ -8,10 +8,14 @@ strtime0 = '2019-12-07T21:31:56.000Z'
 
 
 # khai báo biến fprice và gán cho nó giá trị bằng với strprice
-# Hàm replace được dùng để thay đổi chuỗi hoặc giá trị
+
 # Remove dấu dollar rồi thay bằng chuỗi rỗng
 # Sau đó, chuổi rỗng sẽ được chuyển sang số thực
 fprice = float(strprice.replace("$", ""))
+
+# [1:] để lấy những thứ tự từ 1 trở đi - bỏ đi dấu $S
+# sau đó dùng lệnh float để chuyển dạng string thành dạng giá trị thực
+fprice_test = float(strprice[1:])
 
 # Thử phép tính giá trị thực nhân với 1.1
 fprice1 = fprice * 1.1
@@ -21,19 +25,19 @@ fprice1 = fprice * 1.1
 # Sử dụng method strptime để chuyển thời gian dạng string sang dạng số
 # Method Strptime này có 2 arguments (value và format)
 # Format của strptime được chọn dựa trên tài liệu Python
-# %Y là year 4 chữ số, %m là tháng 2 chữ số, %d là ngày, %H là giờ dạng 24h, %M là Phút, %S là giây)
 dttime0 = datetime.strptime(strtime0, "%Y-%m-%dT%H:%M:%S.000Z")
 
 # tạo biến dttime1 có giá trị bằng giá trị của dttime0 cộng thêm 1 giờ 2 phút 3 giây
 
-# Sử dụng timedelta method để cộng thêm thời gian, xuất ra giá trị mới dttime1 bằng cách gán giá trị cho biến keyword agruements
-# như là giờ, phút, và giây
+# Sử dụng timedelta method để cộng thêm thời gian, xuất ra giá trị mới dttime1
 dttime1 = dttime0 + timedelta(hours=1, minutes=2, seconds=3)
 
 # Xuất 3 giá trị đã tính ra màn hình
 
 # In giá trị của các biến
 print(fprice)
+print("----")
+print(fprice_test)
 print(dttime0)
 print(dttime1)
 print(f"{fprice1:.2f}")
